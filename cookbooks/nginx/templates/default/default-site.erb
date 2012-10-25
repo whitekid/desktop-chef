@@ -8,4 +8,13 @@ server {
     root   /var/www/nginx-default;
     index  index.html index.htm;
   }
+
+  # openstack horizon
+  location /horizon {
+    proxy_pass http://10.20.1.6/horizon;
+  }
+
+  location /static {
+    proxy_pass http://10.20.1.6/static;
+  }
 }
